@@ -28,8 +28,8 @@ library(lubridate)
 rm("difference") -- deleted accidentally created df
 
 data_2019_tibble %>%
-+ mutate(start_time = ymd_hms(start_time), end_time = ymd_hms(end_time)) %>% 
-mutate(trip_duration_check = interval(start_time, end_time) / seconds(1)) -- checking whether trip duration in data_2019 is in min or sec in order to count it in data_2020. We count it and put into trip_duration_check column 
+mutate(start_time = ymd_hms(start_time), end_time = ymd_hms(end_time)) %>% 
+mutate(trip_duration_check = interval(start_time, end_time)) -- checking whether trip duration in data_2019 is in min or sec in order to count it in data_2020. We count it and put into trip_duration_check column 
 
 trip_duration_calc$tripduration <- as.numeric(trip_duration_calc$tripduration)
 trip_duration_calc$trip_duration_check <- as.numeric(trip_duration_calc$trip_duration_check)
