@@ -33,4 +33,13 @@ mutate(trip_duration_check = interval(start_time, end_time) / seconds(1)) -- che
 
 trip_duration_calc$tripduration <- as.numeric(trip_duration_calc$tripduration)
 trip_duration_calc$trip_duration_check <- as.numeric(trip_duration_calc$trip_duration_check)
-trip_duration_calc$tripduration == trip_duration_calc$trip_duration_check
+table(trip_duration_calc$tripduration == trip_duration_calc$trip_duration_check) -- checking that the columns have identical entries
+ FALSE   TRUE 
+    24 365045 
+trip_duration_calc$Bol_trip_dur <- trip_duration_calc$tripduration == trip_duration_calc$trip_duration_check  --adding column with Boolean answers to tripduration == trip_duration_check to trip_duration_calc df
+
+new_bol_df <- trip_duration_calc %>% select('start_time', 'end_time', 'tripduration', 'trip_duration_check', 'Bol_trip_dur')
+
+filter(new_bol_df, Bol_trip_dur == "FALSE") -- this tibble shows only 10 first rows
+
+print(filter(new_bol_df, Bol_trip_dur == "FALSE"), n=24) -- to see all rows where Bol_trip_dur == "FALSE"
