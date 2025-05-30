@@ -44,3 +44,12 @@ filter(new_bol_df, Bol_trip_dur == "FALSE") -- this tibble shows only 10 first r
 
 print(filter(new_bol_df, Bol_trip_dur == "FALSE"), n=24) -- to see all rows where Bol_trip_dur == "FALSE"
 ![image](https://github.com/user-attachments/assets/ce1eb030-7b52-49b5-8d05-5775edebecab)
+
+
+# thjis
+trip_duration_calc %>%
+  "tripduration" <- as.numeric("tripduration")
+"trip_duration_check" <- as.numeric("trip_duration_check")
+  if ("tripduration" == "trip_duration_check") {
+      print("true")
+  } else {print("false")}
