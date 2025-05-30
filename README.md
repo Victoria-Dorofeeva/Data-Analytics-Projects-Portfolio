@@ -1,3 +1,5 @@
+# Business task: analyzing users' historical trip data find out how annual members and casual riders use Cyclistic bikes differently in order to inform the design of the new marketing strategy aimed at converting casual users into annual, more profitable users.
+# Data sources: 2 files with historical data: data_2019 and data_2020
 install.packages("tidyverse")
 install.packages("readr")
 library(tidyverse)
@@ -44,12 +46,3 @@ filter(new_bol_df, Bol_trip_dur == "FALSE") -- this tibble shows only 10 first r
 
 print(filter(new_bol_df, Bol_trip_dur == "FALSE"), n=24) -- to see all rows where Bol_trip_dur == "FALSE"
 ![image](https://github.com/user-attachments/assets/ce1eb030-7b52-49b5-8d05-5775edebecab)
-
-
-# thjis
-trip_duration_calc %>%
-  "tripduration" <- as.numeric("tripduration")
-"trip_duration_check" <- as.numeric("trip_duration_check")
-  if ("tripduration" == "trip_duration_check") {
-      print("true")
-  } else {print("false")}
