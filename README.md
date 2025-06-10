@@ -49,4 +49,5 @@ new_bool_df <- trip_duration_calc %>% select('start_time', 'end_time', 'tripdura
 # I filter for only FALSE values in boolean_trip_dur column. Then I use View and print(n=...) functions to see the whole table
 View(filter(new_bool_df, boolean_trip_dur == "FALSE"))
 print(filter(new_bool_df, boolean_trip_dur == "FALSE"), n=24)
-![image](https://github.com/user-attachments/assets/ce1eb030-7b52-49b5-8d05-5775edebecab)
+![image](https://github.com/user-attachments/assets/83063fb5-d4a6-4174-b8df-53c498b2e348)
+
