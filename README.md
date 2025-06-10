@@ -43,11 +43,12 @@ table(trip_duration_calc$tripduration == trip_duration_calc$trip_duration_check)
  FALSE   TRUE 
     24 365045
 # The code revals that the vast majority of rows match, however, there are 24 rows that do not match. I decide to look closer at these 24 rows. I create a column with boolean data type called boolean_trip_dur in trip_duration_calc data frame
-trip_duration_calc$boolean_trip_dur <- trip_duration_calc$tripduration == trip_duration_calc$trip_duration_check
+trip_duration_calc$bolean_trip_dur <- trip_duration_calc$tripduration == trip_duration_calc$trip_duration_check
+# I notice I misspelled boolean and need ro rename the column and save it to trip_duration_calc data frame
+trip_duration_calc <- rename(trip_duration_calc, boolean_trip_dur = boolean_trip_dur)
 # Then I create a new data frame with selected columns from trip_duration_calc to study each row in detail
 new_bool_df <- trip_duration_calc %>% select('start_time', 'end_time', 'tripduration', 'trip_duration_check', 'boolean_trip_dur')
 # I filter for only FALSE values in boolean_trip_dur column. Then I use View and print(n=...) functions to see the whole table
 View(filter(new_bool_df, boolean_trip_dur == "FALSE"))
 print(filter(new_bool_df, boolean_trip_dur == "FALSE"), n=24)
 ![image](https://github.com/user-attachments/assets/83063fb5-d4a6-4174-b8df-53c498b2e348)
-
