@@ -64,3 +64,5 @@
 	data_2019_tibble$boolean_trip_dur <- NULL
 ## Next I want to add a column to data_2019_tibble data frame that shows on which day of the week each trip started
 	data_2019_tibble$start_day <- weekdays(data_2019_tibble$start_time)
+## Finally, I want columns specifying user type in both data_2019_tibble and data_2020_tibble data frames to be unified, to have the same column name and consistent values
+## Now I add necessary columns to data_2020_tibble data frame
