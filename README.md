@@ -45,7 +45,7 @@
 	trip_duration_calc$trip_duration_check <- as.numeric(trip_duration_calc$trip_duration_check)
 	table(trip_duration_calc$tripduration == trip_duration_calc$trip_duration_check)
 	 FALSE   TRUE 
-   	 24 365045
+	 24      365045
 # The code revals that the vast majority of rows match, however, there are 24 rows that do not match. I decide to look closer at these 24 rows. I create a column with boolean data type called boolean_trip_dur in trip_duration_calc data frame
 	trip_duration_calc$bolean_trip_dur <- trip_duration_calc$tripduration == trip_duration_calc$trip_duration_check
 # I notice I misspelled boolean and need ro rename the column and save it to trip_duration_calc data frame
