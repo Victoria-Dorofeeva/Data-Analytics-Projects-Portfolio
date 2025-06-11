@@ -35,7 +35,7 @@ docked_bike
 # Having studied both 2019 and 2020 tables, I come up with the following subquestions to answer the main question of how member and casual bike user behaviors differ:
 	1. How does trip duration differ between members and casueal users?
 	2. How does start day of the week differ between members and casueal users?
-     3. What are the most popular departing stations among members and casueal users?
+        3. What are the most popular departing stations among members and casueal users?
 # I notice that data_2020_tibble does not have a column calculating trip duration, so I need to create it. Before I do that, I check whether trip duration in data_2019_tibble is in min or sec in order to count it in data_2020_tibble. I count it using interval function and put into trip_duration_check column, and save this as a new data frame trip_duration_calc for easier access
 trip_duration_calc <- data_2019_tibble %>%
 mutate(start_time = ymd_hms(start_time), end_time = ymd_hms(end_time)) %>% 
