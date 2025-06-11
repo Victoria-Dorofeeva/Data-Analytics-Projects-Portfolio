@@ -28,6 +28,7 @@
 ## Finally, I use View function to take a look at the tables and see how they are organized. Before actually analyzing data to answer the business task question I want to aggregate all data into one data frame. In order to do that, I need to identify columns from each data frame that I want to bring into an aggregated data frame, and calculate and add columns if needed. At this step I start thinking which column I should investigate further
 	View(data_2019_tibble)
 	View(data_2020_tibble)
+ 	![image](https://github.com/user-attachments/assets/8afb4e70-bf41-46e2-b44e-e13d6e7b13b8)
 ## I inquire whether there are several bike types (how many unique values in column rideable_type of data_2020 data frame). Turns out, there is only one type of bike, so my idea to investigate if members and casual users tend to use different types of bikes won't be needed, which is good because we do not have a corresponding column in data_2019 data frame
 	table(data_2020_tibble$rideable_type)
 	docked_bike
@@ -62,4 +63,4 @@
 ## I notice that column boolean_trip_dur was accidentally added to data_2019_tibble data frame at some point so I remove it
 	data_2019_tibble$boolean_trip_dur <- NULL
 ## Next I want to add a column to data_2019_tibble data frame that shows on which day of the week each trip started
-
+	data_2019_tibble$start_day <- weekdays(data_2019_tibble$start_time)
