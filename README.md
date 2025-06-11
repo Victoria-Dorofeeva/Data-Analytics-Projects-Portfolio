@@ -4,6 +4,7 @@
 <OL>
 <LI>install.packages("tidyverse")
 <LI>install.packages("readr")
+<OL>
 # Then I load these packages
 library(tidyverse)
 library(readr)
