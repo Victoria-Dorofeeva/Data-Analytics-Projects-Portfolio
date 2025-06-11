@@ -59,7 +59,7 @@
 ## The table reveals that 24 out of 365059 values in the tripduration column that came with the file for this case study are not matching my calculations in trip_duration_check column. I cannot find any problems with columns and data types, so I count a few random trip durations manually. The results match my calculations in trip_duration_check column. I therefore decide that these must be typos and decide to use my trip_duration_check column instead of tripduration for further analysis
 ## I add trip_duration_check column to original data_2019_tibble data frame for convinience and further study
 	data_2019_tibble <- mutate(trip_duration_calc, trip_duration_check)
-## I notice that column boolean_trip_dur was also added to data_2019_tibble data frame at some point so I remove it
+## I notice that column boolean_trip_dur was accidentally added to data_2019_tibble data frame at some point so I remove it
 	data_2019_tibble$boolean_trip_dur <- NULL
 ## Next I want to add a column to data_2019_tibble data frame that shows on which day of the week each trip started
 
