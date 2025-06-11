@@ -31,7 +31,7 @@
 # I inquire whether there are several bike types (how many unique values in column rideable_type of data_2020 data frame). Turns out, there is only one type of bike, so my idea to investigate if members and casual users tend to use different types of bikes won't be needed, which is good because we do not have a corresponding column in data_2019 data frame
 	table(data_2020_tibble$rideable_type)
 	docked_bike
- 426887
+	426887
 # Having studied both 2019 and 2020 tables, I come up with the following subquestions to answer the main question of how member and casual bike user behaviors differ:
 	1. How does trip duration differ between members and casueal users?
 	2. How does start day of the week differ between members and casueal users?
