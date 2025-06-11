@@ -1,10 +1,8 @@
 # Business task: analyzing users' historical trip data find out how annual members and casual riders use Cyclistic bikes differently in order to inform the design of the new marketing strategy aimed at converting casual users into annual, more profitable users
 # Data sources: 2 files with historical data: data_2019 and data_2020
 ## First I install all necessary R packages
-<OL>
-<LI>install.packages("tidyverse")
-<LI>install.packages("readr")
-<OL>
+install.packages("tidyverse")
+install.packages("readr")
 # Then I load these packages
 library(tidyverse)
 library(readr)
