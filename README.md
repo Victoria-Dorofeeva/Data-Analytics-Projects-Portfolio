@@ -1,4 +1,4 @@
-# Business task: analyzing users' historical trip data find out how annual members and casual riders use Cyclistic bikes differently in order to inform the design of the new marketing strategy aimed at converting casual users into annual, more profitable users
+# Business task: analyze users' historical trip data to find out how annual members and casual riders use Cyclistic bikes differently in order to inform the design of the new marketing strategy aimed at converting casual users into annual, more profitable users
 # Data sources: 2 files with historical data: data_2019 and data_2020
 ## First I install all necessary R packages
 install.packages("tidyverse")
@@ -52,4 +52,4 @@ new_bool_df <- trip_duration_calc %>% select('start_time', 'end_time', 'tripdura
 View(filter(new_bool_df, boolean_trip_dur == "FALSE"))
 print(filter(new_bool_df, boolean_trip_dur == "FALSE"), n=24)
 ![image](https://github.com/user-attachments/assets/83063fb5-d4a6-4174-b8df-53c498b2e348)
-df
+# The table reveals that 24 out of 365059 values in the tripduration column that came with the file for this case study are not matching my calculations in trip_duration_check column. I cannot find any problems with columns and data types, so I count a few random trip durations manually. The results match my calculations in trip_duration_check column. I therefore decide that these must be typos and decide to use my trip_duration_check column instead of tripduration for further analysis.
