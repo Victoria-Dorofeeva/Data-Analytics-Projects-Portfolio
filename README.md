@@ -52,3 +52,4 @@ new_bool_df <- trip_duration_calc %>% select('start_time', 'end_time', 'tripdura
 View(filter(new_bool_df, boolean_trip_dur == "FALSE"))
 print(filter(new_bool_df, boolean_trip_dur == "FALSE"), n=24)
 ![image](https://github.com/user-attachments/assets/83063fb5-d4a6-4174-b8df-53c498b2e348)
+df
