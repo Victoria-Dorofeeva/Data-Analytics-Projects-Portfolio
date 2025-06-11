@@ -32,6 +32,10 @@ View(data_2020_tibble)
 table(data_2020_tibble$rideable_type)
 docked_bike
      426887
+# Having studied both 2019 and 2020 tables, I come up with the following subquestions to answer the main question of how member and casual bike user behaviors differ:
+	1. How does trip duration differ between members and casueal users?
+	2. How does start day of the week differ between members and casueal users?
+     3. What are the most popular departing stations among members and casueal users?
 # I notice that data_2020_tibble does not have a column calculating trip duration, so I need to create it. Before I do that, I check whether trip duration in data_2019_tibble is in min or sec in order to count it in data_2020_tibble. I count it using interval function and put into trip_duration_check column, and save this as a new data frame trip_duration_calc for easier access
 trip_duration_calc <- data_2019_tibble %>%
 mutate(start_time = ymd_hms(start_time), end_time = ymd_hms(end_time)) %>% 
@@ -52,4 +56,5 @@ new_bool_df <- trip_duration_calc %>% select('start_time', 'end_time', 'tripdura
 View(filter(new_bool_df, boolean_trip_dur == "FALSE"))
 print(filter(new_bool_df, boolean_trip_dur == "FALSE"), n=24)
 ![image](https://github.com/user-attachments/assets/83063fb5-d4a6-4174-b8df-53c498b2e348)
-# The table reveals that 24 out of 365059 values in the tripduration column that came with the file for this case study are not matching my calculations in trip_duration_check column. I cannot find any problems with columns and data types, so I count a few random trip durations manually. The results match my calculations in trip_duration_check column. I therefore decide that these must be typos and decide to use my trip_duration_check column instead of tripduration for further analysis.
+# The table reveals that 24 out of 365059 values in the tripduration column that came with the file for this case study are not matching my calculations in trip_duration_check column. I cannot find any problems with columns and data types, so I count a few random trip durations manually. The results match my calculations in trip_duration_check column. I therefore decide that these must be typos and decide to use my trip_duration_check column instead of tripduration for further analysis
+# 
