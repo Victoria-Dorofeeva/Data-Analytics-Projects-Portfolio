@@ -79,3 +79,9 @@
 	data_2019_tibble <- rename(data_2019_tibble, trip_duration = trip_duration_check)
  	data_2019_tibble <- rename(data_2019_tibble, start_station_name = from_station_name)
   	data_2019_tibble <- rename(data_2019_tibble, end_station_name = to_station_name)
+
+	data_2019_tibble <- rename(data_2019_tibble, user_type = usertype)
+	data_2020_tibble <- rename(data_2020_tibble, user_type = member_casual)
+
+ 	data_2019_tibble$user_type <- replace(data_2019_tibble$user_type, data_2019_tibble$user_type == "Subscriber", "casual")
+	 data_2019_tibble$user_type <- replace(data_2019_tibble$user_type, data_2019_tibble$user_type == "Customer", "member")
