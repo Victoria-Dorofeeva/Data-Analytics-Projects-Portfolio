@@ -79,9 +79,15 @@
 	data_2019_tibble <- rename(data_2019_tibble, trip_duration = trip_duration_check)
  	data_2019_tibble <- rename(data_2019_tibble, start_station_name = from_station_name)
   	data_2019_tibble <- rename(data_2019_tibble, end_station_name = to_station_name)
-
+## Values of user_type column in data_2019_tibble also need to be replaced to be consistent with data_2020_tibble
 	data_2019_tibble <- rename(data_2019_tibble, user_type = usertype)
 	data_2020_tibble <- rename(data_2020_tibble, user_type = member_casual)
 
  	data_2019_tibble$user_type <- replace(data_2019_tibble$user_type, data_2019_tibble$user_type == "Subscriber", "casual")
-	 data_2019_tibble$user_type <- replace(data_2019_tibble$user_type, data_2019_tibble$user_type == "Customer", "member")
+	data_2019_tibble$user_type <- replace(data_2019_tibble$user_type, data_2019_tibble$user_type == "Customer", "member")
+## I remove not needed columns from both data frames
+ 	data_2019_tibble <- subset(data_2019_tibble, select = c(-trip_id, -bikeid, -tripduration, -from_station_id, -to_station_id, -gender, -birthyear))
+  	data_2020_tibble <- subset(data_2020_tibble, select = c(-ride_id, -rideable_type, -start_station_id, -end_station_id, -start_lat, -start_lng, -end_lat, -end_lng))
+## Now I want to combine my 2 data frames vertically
+	merged_df <- rbind(data_2019_tibble, data_2020_tibble)
+ ![image](https://github.com/user-attachments/assets/5f805eb9-f525-4f92-b458-47a2b5e4afee)
