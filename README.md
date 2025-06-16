@@ -66,10 +66,16 @@
 	data_2019_tibble$boolean_trip_dur <- NULL
 ## Next I want to add a column to data_2019_tibble data frame that shows on which day of the week each trip started
 	data_2019_tibble$start_day <- weekdays(data_2019_tibble$start_time)
-## Finally, I want columns specifying user type in both data_2019_tibble and data_2020_tibble data frames to be unified, to have the same column name and consistent values
 ## Now I add necessary columns to data_2020_tibble data frame: trip duration and day of the week
 	data_2020_tibble <- data_2020_tibble %>%
 	+ mutate(started_at = ymd_hms(started_at), ended_at = ymd_hms(ended_at)) %>%
 	+ mutate(trip_duration = interval(started_at, ended_at) / seconds(1))
 	
  	data_2020_tibble$start_day <- weekdays(data_2020_tibble$started_at)
+## Before merging 2 data frames with the data for 2019 and 2020, I need to make column names consistent
+	data_2020_tibble <- rename(data_2020_tibble, start_time = started_at)
+ 	data_2020_tibble <- rename(data_2020_tibble, end_time = ended_at)
+  
+	data_2019_tibble <- rename(data_2019_tibble, trip_duration = trip_duration_check)
+ 	data_2019_tibble <- rename(data_2019_tibble, start_station_name = from_station_name)
+  	data_2019_tibble <- rename(data_2019_tibble, end_station_name = to_station_name)
