@@ -1,5 +1,6 @@
 # Business task: analyze users' historical trip data to find out how annual members and casual riders use Cyclistic bikes differently in order to inform the design of the new marketing strategy aimed at converting casual users into annual, more profitable users
 ## Data sources: 2 files with historical data: data_2019 and data_2020
+# 1. Data preparation and manupulation
 ## First I install all necessary R packages
 	install.packages("tidyverse")
 	install.packages("readr")
@@ -66,4 +67,9 @@
 ## Next I want to add a column to data_2019_tibble data frame that shows on which day of the week each trip started
 	data_2019_tibble$start_day <- weekdays(data_2019_tibble$start_time)
 ## Finally, I want columns specifying user type in both data_2019_tibble and data_2020_tibble data frames to be unified, to have the same column name and consistent values
-## Now I add necessary columns to data_2020_tibble data frame
+## Now I add necessary columns to data_2020_tibble data frame: trip duration and day of the week
+	data_2020_tibble <- data_2020_tibble %>%
+	+ mutate(started_at = ymd_hms(started_at), ended_at = ymd_hms(ended_at)) %>%
+	+ mutate(trip_duration = interval(started_at, ended_at) / seconds(1))
+	
+ 	data_2020_tibble$start_day <- weekdays(data_2020_tibble$started_at)
