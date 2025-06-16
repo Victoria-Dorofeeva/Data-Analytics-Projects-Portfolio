@@ -91,3 +91,4 @@
 ## Now I want to combine my 2 data frames vertically
 	merged_df <- rbind(data_2019_tibble, data_2020_tibble)
  ![image](https://github.com/user-attachments/assets/5f805eb9-f525-4f92-b458-47a2b5e4afee)
+# 2. Analysis and visualizations
