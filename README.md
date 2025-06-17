@@ -110,5 +110,10 @@
 	group_by(user_type) %>%
 	summarise(mode_start_day = mode(start_day))
 ![image](https://github.com/user-attachments/assets/ed6a9ae0-7734-4a47-a044-1fac8b2ef215)
-##
-	
+## I also want to present these findings as a stacked bar chart, to see the whole week and potentially a trend
+	ggplot(data = merged_df) + geom_bar(mapping = aes(x=start_day, fill=user_type))	
+![image](https://github.com/user-attachments/assets/6535a731-3d57-4abf-b4c9-f45d91028cf0)
+## I see that the days of the week are in alphabetic order instead of week order, so I use factor function to specify levels I want for the values
+	merged_df$start_day <- factor(merged_df$start_day, c("Monday", "Tuesday", "Wednesday", "Thursday","Friday","Saturday", "Sunday"))
+	ggplot(data = merged_df) + geom_bar(mapping = aes(x=start_day, fill=user_type))
+![image](https://github.com/user-attachments/assets/a7505bdf-b144-4015-a066-0981cea1761a)
