@@ -121,5 +121,6 @@
 ## Much better but the graph still looks confusing, so I divide the graph into 2 by user type via facet_wrap
 	ggplot(data = merged_df) + geom_bar(mapping = aes(x=start_day, fill=user_type)) + facet_wrap(~user_type)
  ![image](https://github.com/user-attachments/assets/26ceb112-6b6b-4257-b655-1c162f18a1ab)
-##
+## For the final touch, I rotate x-axis labels so that they are more visible and add title and subtitle
 	ggplot(data = merged_df) + geom_bar(mapping = aes(x=start_day, fill=user_type)) + facet_wrap(~user_type) + theme(axis.text.x = element_text(angle = 45)) + labs(title="Days of the week casual and member users prefer to start their trips", subtitle="Based on 2019 and 2020 data")
+![Rplot](https://github.com/user-attachments/assets/6c52e1d2-8434-43fe-8e5d-4ed738037095)
