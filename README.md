@@ -118,3 +118,6 @@
  
 	ggplot(data = merged_df) + geom_bar(mapping = aes(x=start_day, fill=user_type))
 ![image](https://github.com/user-attachments/assets/a7505bdf-b144-4015-a066-0981cea1761a)
+## Much better but the graph still looks confusing, so I difide the graph into 2 by user type via facet_wrap
+	ggplot(data = merged_df) + geom_bar(mapping = aes(x=start_day, fill=user_type)) + facet_wrap(~user_type)
+ ![image](https://github.com/user-attachments/assets/26ceb112-6b6b-4257-b655-1c162f18a1ab)
