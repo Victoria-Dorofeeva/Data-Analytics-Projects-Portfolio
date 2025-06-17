@@ -39,6 +39,8 @@
 	1. How does trip duration differ between members and casual users?
 	2. How does start day of the week differ between members and casual users?
 	3. What are the most popular departing stations among members and casual users?
+ 	4. What are the most popular arrival stations among members and casual users?
+ 	5. Is there a significant amount of trips that end where they started by yser type?
 ## I notice that data_2020_tibble does not have a column calculating trip duration, so I need to create it. Before I do that, I check whether trip duration in data_2019_tibble is in min or sec in order to count it in data_2020_tibble. I count it using interval function and put into trip_duration_check column, and save this as a new data frame trip_duration_calc for easier access
 	trip_duration_calc <- data_2019_tibble %>%
 	mutate(start_time = ymd_hms(start_time), end_time = ymd_hms(end_time)) %>% 
@@ -124,3 +126,4 @@
 ## For the final touch, I rotate x-axis labels so that they are more visible and add title and subtitle
 	ggplot(data = merged_df) + geom_bar(mapping = aes(x=start_day, fill=user_type)) + facet_wrap(~user_type) + theme(axis.text.x = element_text(angle = 45)) + labs(title="Days of the week casual and member users prefer to start their trips", subtitle="Based on 2019 and 2020 data")
 ![Rplot](https://github.com/user-attachments/assets/6c52e1d2-8434-43fe-8e5d-4ed738037095)
+## To answer the third question (What are the most popular departing stations among members and casual users?)
