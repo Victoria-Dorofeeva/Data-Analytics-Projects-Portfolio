@@ -127,3 +127,6 @@
 	ggplot(data = merged_df) + geom_bar(mapping = aes(x=start_day, fill=user_type)) + facet_wrap(~user_type) + theme(axis.text.x = element_text(angle = 45)) + labs(title="Days of the week casual and member users prefer to start their trips", subtitle="Based on 2019 and 2020 data")
 ![Rplot](https://github.com/user-attachments/assets/6c52e1d2-8434-43fe-8e5d-4ed738037095)
 ## To answer the third question (What are the most popular departing stations among members and casual users?)
+	subset_member <- subset(merged_df, user_type == "member")
+ 	sort(table(subset_member$start_station_name), decreasing = TRUE)[1:10]
+![image](https://github.com/user-attachments/assets/eccc6d97-cc96-4532-aaf7-d45fea267a22)
