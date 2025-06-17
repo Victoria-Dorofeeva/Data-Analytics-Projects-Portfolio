@@ -110,3 +110,5 @@
 	group_by(user_type) %>%
 	summarise(mode_start_day = mode(start_day))
 ![image](https://github.com/user-attachments/assets/ed6a9ae0-7734-4a47-a044-1fac8b2ef215)
+##
+	
