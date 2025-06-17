@@ -92,3 +92,8 @@
 	merged_df <- rbind(data_2019_tibble, data_2020_tibble)
  ![image](https://github.com/user-attachments/assets/5f805eb9-f525-4f92-b458-47a2b5e4afee)
 # 2. Analysis and visualizations
+## I answer the first question (How does trip duration differ between members and casual users?) by counting mean of trip duration by user type
+	merged_df %>%
+	+ group_by(user_type) %>%
+	+ summarise(mean_trip_dur = mean(trip_duration))
+![image](https://github.com/user-attachments/assets/4e1b8d4a-ce4c-4865-a57a-c7b8e03343e8)
