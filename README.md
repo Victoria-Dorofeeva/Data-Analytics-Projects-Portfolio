@@ -96,4 +96,17 @@
 	merged_df %>%
 	+ group_by(user_type) %>%
 	+ summarise(mean_trip_dur = mean(trip_duration))
-![image](https://github.com/user-attachments/assets/4e1b8d4a-ce4c-4865-a57a-c7b8e03343e8)
+![image](https://github.com/user-attachments/assets/f72ce987-c958-4748-a0e1-c307c2fd9b05)
+## Find mode of start day of the week. Create mode function
+	mode <- function(x, na.rm = FALSE) {     
+	if(na.rm){
+	x = x[!is.na(x)]
+	}
+	val <- unique(x)
+	return(val[which.max(tabulate(match(x, val)))])
+ 	}
+
+  	merged_df %>%
+	group_by(user_type) %>%
+	summarise(mode_start_day = mode(start_day))
+![image](https://github.com/user-attachments/assets/ed6a9ae0-7734-4a47-a044-1fac8b2ef215)
