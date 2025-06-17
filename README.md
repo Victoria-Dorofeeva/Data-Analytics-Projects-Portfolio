@@ -97,7 +97,7 @@
 	+ group_by(user_type) %>%
 	+ summarise(mean_trip_dur = mean(trip_duration))
 ![image](https://github.com/user-attachments/assets/f72ce987-c958-4748-a0e1-c307c2fd9b05)
-## Find mode of start day of the week. Create mode function
+## Then I answer the second question (How does start day of the week differ between members and casual users?) by find mode of the start day of the week. First, I need to create mode function
 	mode <- function(x, na.rm = FALSE) {     
 	if(na.rm){
 	x = x[!is.na(x)]
