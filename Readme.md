@@ -41,7 +41,7 @@
 	2. How does start day of the week differ between members and casual users?
 	3. What are the most popular departure stations among members and casual users?
  	4. What are the most popular arrival stations among members and casual users?
- 	5. Is there a significant amount of trips that end where they started by yser type?
+ 	5. Is there a significant amount of trips that end where they started by user type?
 ## I notice that data_2020_tibble does not have a column calculating trip duration, so I need to create it. Before I do that, I check whether trip duration in data_2019_tibble is in min or sec in order to count it in data_2020_tibble. I count it using interval function and put into trip_duration_check column, and save this as a new data frame trip_duration_calc for easier access
 	trip_duration_calc <- data_2019_tibble %>%
 	mutate(start_time = ymd_hms(start_time), end_time = ymd_hms(end_time)) %>% 
@@ -141,7 +141,7 @@
 
  	sort(table(subset_casual$start_station_name), decreasing = TRUE)[1:10]
 ![image](https://github.com/user-attachments/assets/1f64bd6c-aca2-4415-943c-75891ee87576)
-## 5) To answer the final fifth question (Is there a significant amount of trips that end where they started by yser type?) I apply boolean logic. I also want to find % of the trips that started and ended in the same location for member and casual users respectively. I see that it is 2% for members and 20% for causual users
+## 5) To answer the final fifth question (Is there a significant amount of trips that end where they started by user type?) I apply boolean logic. I also want to find % of the trips that started and ended in the same location for member and casual users respectively. I see that it is 2% for members and 20% for causual users
 	table(subset_member$start_station_name == subset_member$end_station_name)
  	FALSE   TRUE 
 	706399  13914
