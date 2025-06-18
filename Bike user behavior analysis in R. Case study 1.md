@@ -95,12 +95,12 @@
 	merged_df <- rbind(data_2019_tibble, data_2020_tibble)
  ![image](https://github.com/user-attachments/assets/5f805eb9-f525-4f92-b458-47a2b5e4afee)
 # 2. Analysis and visualizations
-## 1) I answer the first question (How does trip duration differ between members and casual users?) by counting mean of trip duration by user type
+## 1) I answer the first question (How does trip duration differ between members and casual users?) by counting the mean of trip duration by user type
 	merged_df %>%
 	+ group_by(user_type) %>%
 	+ summarise(mean_trip_dur = mean(trip_duration))
 ![image](https://github.com/user-attachments/assets/f72ce987-c958-4748-a0e1-c307c2fd9b05)
-## 2) Then I answer the second question (How does start day of the week differ between members and casual users?) by find mode of the start day of the week. First, I need to create mode function
+## 2) Then I answer the second question (How does start day of the week differ between members and casual users?) by finding the mode of the start day of the week. First, I need to create mode function
 	mode <- function(x, na.rm = FALSE) {     
 	if(na.rm){
 	x = x[!is.na(x)]
