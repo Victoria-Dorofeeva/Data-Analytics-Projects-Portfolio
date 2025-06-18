@@ -129,4 +129,9 @@
 ## To answer the third question (What are the most popular departing stations among members and casual users?)
 	subset_member <- subset(merged_df, user_type == "member")
  	sort(table(subset_member$start_station_name), decreasing = TRUE)[1:10]
-![image](https://github.com/user-attachments/assets/eccc6d97-cc96-4532-aaf7-d45fea267a22)
+![image](https://github.com/user-attachments/assets/b30cb751-4cdc-4339-b62d-e0b4390e058c)
+
+	subset_casual <- subset(merged_df, user_type == "casual")
+ 	sort(table(subset_casual$start_station_name), decreasing = TRUE)[1:10]
+![image](https://github.com/user-attachments/assets/1f64bd6c-aca2-4415-943c-75891ee87576)
+
