@@ -157,5 +157,15 @@
 	y <- 13477*100/(58165+13477)
  	print(y)
 	[1] 18.81159
-# 3. Results and recommendations
+# 3. Findings and recommendations
 ## The analysis of user data from 2019 and 2020 shows that bike user behavior differes between member and casual user groups in terms of:
+	1. Casual users on average make 15% longer bike trips than members
+ 	2. Casual users tend to make more bike trips during weekends than during weekdays, with Sunday being the peak day, while members tend to make more bike trips during weekdays, with Tuesday being the peak day
+  	3. 20% of trips that causal users make start and end at the same location, while among members it is only 2% of trips
+   	4. There are no similarities between 10 most popular departure and arrival stations among casual and member users 
+
+ 	Key takeaway: According to the analysis, it appears that causal users use Cyclistic bikes predominantly for leisurely long round trips during weekends, while members tend to use Cyclistic bikes predominantly for commuting within the city during weekdays.
+
+  	Recommendations:
+	1) To convert casual users into members Cyclistic marketing campaing should focus on the benefits and easiness of use of the bikes for commuting to work/scool during weekdays
+ 	2) Knowledge of the top 10 most popular departure and arrival stations among casual users can inform where to spread marketing materials (traditional or digital)
