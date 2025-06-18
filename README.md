@@ -157,4 +157,4 @@
 	y <- 13477*100/(58165+13477)
  	print(y)
 	[1] 18.81159
-# Results and cocnlusions
+# 3. Results and cocnlusions
