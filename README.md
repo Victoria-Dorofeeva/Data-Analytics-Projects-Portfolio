@@ -141,11 +141,19 @@
 
 	sort(table(subset_casual$end_station_name), decreasing = TRUE)[1:10]
 ![image](https://github.com/user-attachments/assets/c630d4fa-d2ba-4a1f-bdd1-26bbb2d4c646)
-## To answer the final fifth question (Is there a significant amount of trips that end where they started by yser type?) I apply boolean logic
+## To answer the final fifth question (Is there a significant amount of trips that end where they started by yser type?) I apply boolean logic. I also wan to find %
 	table(subset_member$start_station_name == subset_member$end_station_name)
  	FALSE   TRUE 
 	706399  13914
 
+ 	x <- 13914*100/(706399+13914)
+  	print(x)
+	[1] 1.93166
+ 
  	table(subset_casual$start_station_name == subset_casual$end_station_name)
   	FALSE  TRUE 
-	58165 13477 
+	58165  13477 
+
+	y <- 13477*100/(58165+13477)
+ 	print(y)
+	[1] 18.81159
