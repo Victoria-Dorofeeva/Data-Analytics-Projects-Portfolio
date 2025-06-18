@@ -39,9 +39,9 @@
 ## Having studied both 2019 and 2020 tables, I come up with the following subquestions to answer the main question of how member and casual bike user behaviors differ:
 	1. How does trip duration differ between members and casual users?
 	2. How does start day of the week differ between members and casual users?
-	3. What are the most popular departing stations among members and casual users?
+	3. What are the most popular departure stations among members and casual users?
  	4. What are the most popular arrival stations among members and casual users?
- 	5. Is there a significant amount of trips that end where they started by yser type?
+ 	5. Is there a significant amount of trips that end where they started by user type?
 ## I notice that data_2020_tibble does not have a column calculating trip duration, so I need to create it. Before I do that, I check whether trip duration in data_2019_tibble is in min or sec in order to count it in data_2020_tibble. I count it using interval function and put into trip_duration_check column, and save this as a new data frame trip_duration_calc for easier access
 	trip_duration_calc <- data_2019_tibble %>%
 	mutate(start_time = ymd_hms(start_time), end_time = ymd_hms(end_time)) %>% 
@@ -95,12 +95,12 @@
 	merged_df <- rbind(data_2019_tibble, data_2020_tibble)
  ![image](https://github.com/user-attachments/assets/5f805eb9-f525-4f92-b458-47a2b5e4afee)
 # 2. Analysis and visualizations
-## I answer the first question (How does trip duration differ between members and casual users?) by counting mean of trip duration by user type
+## 1) I answer the first question (How does trip duration differ between members and casual users?) by counting mean of trip duration by user type
 	merged_df %>%
 	+ group_by(user_type) %>%
 	+ summarise(mean_trip_dur = mean(trip_duration))
 ![image](https://github.com/user-attachments/assets/f72ce987-c958-4748-a0e1-c307c2fd9b05)
-## Then I answer the second question (How does start day of the week differ between members and casual users?) by find mode of the start day of the week. First, I need to create mode function
+## 2) Then I answer the second question (How does start day of the week differ between members and casual users?) by find mode of the start day of the week. First, I need to create mode function
 	mode <- function(x, na.rm = FALSE) {     
 	if(na.rm){
 	x = x[!is.na(x)]
@@ -127,21 +127,21 @@
 ## For the final touch, I rotate x-axis labels so that they are more visible and add title and subtitle
 	ggplot(data = merged_df) + geom_bar(mapping = aes(x=start_day, fill=user_type)) + facet_wrap(~user_type) + theme(axis.text.x = element_text(angle = 45)) + labs(title="Days of the week casual and member users prefer to start their trips", subtitle="Based on 2019 and 2020 data")
 ![Rplot](https://github.com/user-attachments/assets/6c52e1d2-8434-43fe-8e5d-4ed738037095)
-## To answer the third question (What are the most popular departing stations among members and casual users?) Only 1 station matching
-	subset_member <- subset(merged_df, user_type == "member")
- 	sort(table(subset_member$start_station_name), decreasing = TRUE)[1:10]
-![image](https://github.com/user-attachments/assets/b30cb751-4cdc-4339-b62d-e0b4390e058c)
-
-	subset_casual <- subset(merged_df, user_type == "casual")
- 	sort(table(subset_casual$start_station_name), decreasing = TRUE)[1:10]
-![image](https://github.com/user-attachments/assets/1f64bd6c-aca2-4415-943c-75891ee87576)
-## To answer the fourth question (What are the most popular arrival stations among members and casual users?). Only 1 station matching
+## 3) To answer the third question (What are the most popular departure stations among members and casual users?) I create 2 data frames as subsets containing only member or only casual users respectively and use sort and table functions. I can see that only 1 station among the most popular departure stations matches between member and casual users
+	subset_member <- subset(merged_df, user_type == "member")	
 	sort(table(subset_member$end_station_name), decreasing = TRUE)[1:10]
 ![image](https://github.com/user-attachments/assets/7746f431-f437-43f1-aa73-265eed9a85fc)
 
+	subset_casual <- subset(merged_df, user_type == "casual")
 	sort(table(subset_casual$end_station_name), decreasing = TRUE)[1:10]
 ![image](https://github.com/user-attachments/assets/c630d4fa-d2ba-4a1f-bdd1-26bbb2d4c646)
-## To answer the final fifth question (Is there a significant amount of trips that end where they started by yser type?) I apply boolean logic. I also wan to find %
+## 4) To answer the fourth question (What are the most popular arrival stations among members and casual users?) I repeat the code for end_station_name. I can see that only 1 station among the most popular arrival stations matches between member and casual users
+ 	sort(table(subset_member$start_station_name), decreasing = TRUE)[1:10]
+![image](https://github.com/user-attachments/assets/b30cb751-4cdc-4339-b62d-e0b4390e058c)
+
+ 	sort(table(subset_casual$start_station_name), decreasing = TRUE)[1:10]
+![image](https://github.com/user-attachments/assets/1f64bd6c-aca2-4415-943c-75891ee87576)
+## 5) To answer the final fifth question (Is there a significant amount of trips that end where they started by user type?) I apply boolean logic. I also want to find % of the trips that started and ended in the same location for member and casual users respectively. I see that it is 2% for members and 20% for causual users
 	table(subset_member$start_station_name == subset_member$end_station_name)
  	FALSE   TRUE 
 	706399  13914
@@ -157,4 +157,5 @@
 	y <- 13477*100/(58165+13477)
  	print(y)
 	[1] 18.81159
-# 3. Results and cocnlusions
+# 3. Results and recommendations
+## The analysis of user data from 2019 and 2020 shows that bike user behavior differes between member and casual user groups in terms of:
