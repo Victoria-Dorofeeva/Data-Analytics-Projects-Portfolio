@@ -169,3 +169,6 @@
   	Recommendations:
 	1) To convert casual users into members Cyclistic marketing campaing should focus on the benefits and easiness of use of the bikes for commuting to work/scool during weekdays
  	2) Knowledge of the top 10 most popular departure and arrival stations among casual users can inform where to spread marketing materials (traditional or digital)
+
+ 	Analysis limitations:
+  	1) The dataset did not contain user ids, so it was not possible to find out the difference between the amount of trips casual and member users take.
