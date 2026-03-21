@@ -1,6 +1,6 @@
 ## Task:
 ## Tools: MS Access, SQL
-## Source: ravelry_yarns database on GitHub https://github.com/awalsh17/ravelry_yarns/tree/main
+## Source: [ravelry_yarns database](https://github.com/awalsh17/ravelry_yarns/tree/main) on GitHub
     SELECT
         name,
         permalink,
