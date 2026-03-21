@@ -23,4 +23,5 @@ MS Access, SQL
         AND fiber_type_name = "Cotton"
     ORDER BY
         name;
-## End result: I have ended up with 37 yarn names that fit my criteria. Now I can google these yarns using permalinks and select the one I like the most for my next project.
+## End result: 
+I have ended up with 37 yarn names that fit my criteria. Now I can google these yarns using permalinks and select the one I like the most for my next project.
