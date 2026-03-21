@@ -8,24 +8,24 @@ MS Access, SQL
 I download raw files of yarn.csv and yarn_fibers.csv. Both tables have id column, which will serve as a primary key when I join the tables, since I need the information from both of them.
 After editing correct data types for the columns and removing rows containing NULL values, I decide that I want to look into yarns that have top rating of 5 as the average rating, they need to be of size "Super Bulky" and be at least 80% cotton.
 ## Code:
-    SELECT
-        name,
-        permalink,
-        rating_average,
-        yarn_company_name,
-        yarn_weight_name,
-        percentage,
-        fiber_type_name
-    FROM
-        Yarn
-        INNER JOIN Yarn_fibers ON Yarn.id = Yarn_fibers.id
-    WHERE
-        rating_average = 5
-        AND yarn_weight_name = "Super Bulky"
-        AND percentage >= 80
-        AND fiber_type_name = "Cotton"
-    ORDER BY
-        name;
+   SELECT
+    name,
+    yarn_company_name,
+    permalink,
+    rating_average,
+    yarn_weight_name,
+    fiber_type_name,
+    percentage
+FROM
+    Yarn
+    INNER JOIN Yarn_fibers ON Yarn.id = Yarn_fibers.id
+WHERE
+    rating_average = 5
+    AND yarn_weight_name = "Super Bulky"
+    AND percentage >= 80
+    AND fiber_type_name = "Cotton"
+ORDER BY
+    name;
 ## End result: 
 I have ended up with 36 yarn names that fit my criteria (1 seems not to have an identifiable name). Now I can google these yarns using permalinks and select the one I like the most for my next project.
 <img width="953" height="814" alt="image" src="https://github.com/user-attachments/assets/ff0b2183-0c67-4ebb-91f4-3ceb09f2e92c" />
