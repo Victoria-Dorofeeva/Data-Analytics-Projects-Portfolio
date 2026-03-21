@@ -1,5 +1,6 @@
-## gnjdhjt
-# fr
+## Task:
+## Tools: MS Access, SQL
+## Source: ravelry_yarns database on GitHub https://github.com/awalsh17/ravelry_yarns/tree/main
     SELECT
         name,
         permalink,
