@@ -1,4 +1,5 @@
-## Task: I love crocheting and for my new amigurumi project I want to use a cotton yarn of the size "Super Bulky". There are not a lot of such products available in my local stores, so I decided to search for them online. I decided to take the data from a database assembled by a GitHub user based on yarn data from Ravelry.com - the largest online crocheting and knitting community.
+## Task: 
+I love crocheting and for my new amigurumi project I want to use a cotton yarn of the size "Super Bulky". There are not a lot of such products available in my local stores, so I decided to search for them online. I decided to take the data from a database assembled by a GitHub user based on yarn data from Ravelry.com - the largest online crocheting and knitting support community.
 ## Source: [ravelry_yarns database](https://github.com/awalsh17/ravelry_yarns/tree/main) on GitHub
 ## Tools: MS Access, SQL
     SELECT
