@@ -4,7 +4,10 @@ I love crocheting and for my new amigurumi project I want to use a cotton yarn o
 [ravelry_yarns database](https://github.com/awalsh17/ravelry_yarns/tree/main) on GitHub
 ## Tools: 
 MS Access, SQL
-## I download raw files of yarn.csv and yarn_fibers.csv
+## Preparations
+I download raw files of yarn.csv and yarn_fibers.csv. Both tables have id column, which will serve as a primary key when I join the tables, since I need the information from both of them.
+I decide that I want to look into yarns that have top rating of 5 as the average rating, they need to be of size "Super Bulky" and be at least 80% cotton.
+## Code:
     SELECT
         name,
         permalink,
