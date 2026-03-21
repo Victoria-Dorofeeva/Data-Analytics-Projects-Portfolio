@@ -27,5 +27,5 @@ After editing correct data types for the columns and removing rows containing NU
     ORDER BY
         name;
 ## End result: 
-I have ended up with 37 yarn names that fit my criteria. Now I can google these yarns using permalinks and select the one I like the most for my next project.
+I have ended up with 36 yarn names that fit my criteria (1 seems not to have an identifiable name). Now I can google these yarns using permalinks and select the one I like the most for my next project.
 <img width="953" height="814" alt="image" src="https://github.com/user-attachments/assets/ff0b2183-0c67-4ebb-91f4-3ceb09f2e92c" />
