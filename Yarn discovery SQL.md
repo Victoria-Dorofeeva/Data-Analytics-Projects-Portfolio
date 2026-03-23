@@ -6,7 +6,7 @@ I love crocheting and for my new amigurumi project I want to use a cotton yarn o
 MS Access, SQL
 ## Preparations
 I download raw files of yarn.csv and yarn_fibers.csv. Both tables have id column, which will serve as a primary key when I join the tables, since I need the information from both of them.
-After editing correct data types for the columns and removing rows containing NULL values, I decide that I want to look into yarns that have top rating of 5 as the average rating, they need to be of size "Super Bulky" and be at least 80% cotton.
+After editing correct data types for the columns and removing rows containing NULL values, I decide that I want to look into yarns that have top rating of 5 as the average rating, they need to be of size "Super Bulky" and be at least 20% cotton.
 ## Code:
       SELECT
             name,
@@ -22,7 +22,7 @@ After editing correct data types for the columns and removing rows containing NU
       WHERE
             rating_average = 5
             AND yarn_weight_name = "Super Bulky"
-            AND percentage >= 80
+            AND percentage >= 20
             AND fiber_type_name = "Cotton"
       ORDER BY
             name;
