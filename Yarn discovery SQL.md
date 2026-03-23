@@ -22,8 +22,8 @@ After editing correct data types for the columns and removing rows containing NU
       WHERE
             rating_average = 5
             AND yarn_weight_name = "Super Bulky"
-            AND percentage >= 80
             AND fiber_type_name = "Cotton"
+            AND percentage >= 80
       ORDER BY
             name;
 ## End result: 
