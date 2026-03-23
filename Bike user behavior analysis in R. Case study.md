@@ -5,7 +5,7 @@ Analyze users' historical trip data to find out how annual members and casual ri
 ## Platform: 
 R Studio, R programming language
 # 1. Data preparation and manupulation
-First I install all necessary R packages
+## First I install all necessary R packages
 	install.packages("tidyverse")
 	install.packages("readr")
 ## Then I load these packages
